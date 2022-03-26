@@ -30,6 +30,8 @@ import ClickAwayListener from "@mui/material/ClickAwayListener";
 import MenuList from "@mui/material/MenuList";
 import Paper from "@mui/material/Paper";
 import Grow from "@mui/material/Grow";
+import Cookies from "js-cookie";
+
 import Popper from "@mui/material/Popper";
 
 const Navbar = () => {
@@ -107,6 +109,7 @@ const Navbar = () => {
     }
     setOpen(false);
     clearCart();
+    Cookies.remove("cartItems");
     const data = await signOut({ redirect: false, callbackUrl: "/login" });
     router.push(data.url);
   };
