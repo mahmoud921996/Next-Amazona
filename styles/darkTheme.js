@@ -42,7 +42,7 @@ const theme = createTheme({
     },
     text: {
       primary: "#f1f5f9",
-      secondary: "#111",
+      secondary: "#fff",
     },
   },
 });

@@ -104,6 +104,7 @@ function Shipping() {
               name="country"
               value={shippingInfo.country}
               onChange={changeHandler}
+              
             />
           </ListItem>
           <ListItem>
