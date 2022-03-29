@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -35,6 +36,16 @@ function ProductDetail(props) {
 
   const productsContext = useContext(ProductsContext);
   const { addToCart, cart } = productsContext;
+
+  const fetchReviews = async () => {
+    try {
+      const res = await fetch(`/api/admin/products/${product.id}/reviews`);
+      const data = await res.json();
+      setReviews(data.product.reviews);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
     if (product) {
