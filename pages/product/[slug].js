@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -36,8 +35,6 @@ function ProductDetail(props) {
 
   const productsContext = useContext(ProductsContext);
   const { addToCart, cart } = productsContext;
-
-git 
 
   useEffect(() => {
     if (product) {
