@@ -33,7 +33,7 @@ async function handler(req, res) {
     if (product) {
       const existReview = product.reviews.find(x => x.user == userId);
       if (existReview) {
-       await db.collection("data").updateOne(
+        await db.collection("data").updateOne(
           { _id: ObjectId(req.query.id), "reviews.user": existReview.user },
           {
             $set: {
@@ -43,7 +43,7 @@ async function handler(req, res) {
             },
           }
         );
-      
+
         const updatedProduct = await db
           .collection("data")
           .findOne({ _id: ObjectId(id) });

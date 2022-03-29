@@ -177,7 +177,7 @@ function ProductDetail(props) {
           </ListItem>
         ))}
         <ListItem>
-          {session ? (
+          {session && (
             <Box
               sx={{
                 maxWidth: 800,
@@ -222,8 +222,6 @@ function ProductDetail(props) {
                 </List>
               </Form>
             </Box>
-          ) : (
-            <CircularProgress />
           )}
         </ListItem>
       </List>
